@@ -3,7 +3,7 @@ import pandas
 
 import mail_sender
 
-topics = [y['topic'] for x, y in pandas.read_csv("./topics.csv").iterrows()]
+topics = pandas.read_csv("./topics.csv")['topic']
 
 with st.form("contact"):
     email = st.text_input("Your Email Address")
@@ -14,6 +14,7 @@ with st.form("contact"):
     if submitted:
         message = f"""\
 Subject: Email from ExampleCompanyWebsite
+
 From: {email}
 Topic: {topic}
 {text}"""
