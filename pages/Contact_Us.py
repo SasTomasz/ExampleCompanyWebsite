@@ -20,7 +20,7 @@ Topic: {topic}
 {text}"""
         is_sent = mail_sender.send_email(message)
         if is_sent:
-            st.write("Email was sent")
+            st.write("Your email was sent")
         else:
             st.write("There were a problem with sending Your email. "
                      "Please try again later")
